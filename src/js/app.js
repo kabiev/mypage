@@ -1,0 +1,1 @@
+requireAll(require.context('../pages', false, /\.pug$/));
