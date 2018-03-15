@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title About
-    body
-        .wrapper
+extends ./../layout.pug
+block content
             section.section.header
                 each item in ["in","fb","gh"]
                     ul.socials
@@ -41,14 +34,15 @@ html(lang="en")
                                 p Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, doloribus sit non officiis numquam expedita iure debitis? Quidem exercitationem, non sequi, aut, expedita qui quae reiciendis consectetur ullam ducimus excepturi?
                         .about-data__content
                             ul.skills
-                                each skill in ["Frontend", "WF"]
-                                    li.skills__item
-                                        .skill-section
-                                            .skill-section__title= skill
-                                            ul.skill-section__list
-                                                each skillName in ["HTML5", "CSS3", "JavaScript"]
-                                                    li.skills-section__item
-                                                        .skill
-                                                            svg.skill_progressbar
-                                                            .skill_name= skillName
+                                each skill in skills
+                                    each skillIndex, skillName in skill
+                                        li.skills__item
+                                            .skill-section
+                                                .skill-section__title= skillName
+                                                ul.skill-section__list
+                                                    each skillTitle in skillIndex
+                                                        li.skills-section__item
+                                                            .skill
+                                                                svg.skill_progressbar
+                                                                .skill_name= skillTitle
             section.section.map

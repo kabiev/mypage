@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
+const content = require('./content.json');
 
 const src = { root: path.resolve(__dirname, 'src') };
 const dist = { root: path.resolve(__dirname, 'dist') };
@@ -53,11 +54,7 @@ module.exports = {
                         loader: 'pug-html-loader',
                         options: {
                             pretty: true,
-                            data: {
-                                data() {
-                                    return JSON.parse(fs.readFileSync('./content.json', 'utf8'));
-                                }
-                            },
+                            data: content
                         },
                     },
                 ],
