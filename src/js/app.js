@@ -1,1 +1,1 @@
-requireAll(require.context('../template', false, /\.pug$/));
+requireAll(require.context('../template/pages', false, /\.pug$/));

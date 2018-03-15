@@ -1,48 +1,50 @@
-extends ./../layout.pug
+extends ../layout.pug
+
 block content
-            section.section.header
-                each item in ["in","fb","gh"]
-                    ul.socials
-                        li.socials__item
-                            a(href="" class = `socials__link socials__link_${item}`)
-                a(href="").hamburger-menu
-                a(href="").arrow-down
-                 .header__title
-                    img(src="", alt="").section-title
-                    .user.header__user-block
-                        .user__img
-                        .user__name
-                        .user__website
-            section.section.about
-                .about_l
-                    svg.trg.trg_fill_white
-                    .title.about__section-title
-                        | Персональная информация
-                    .user-about
-                        .user-about__picture
-                        .user-about__title.subtitle
-                            | Кто я
-                        .user-about__text
-                            P Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis eveniet atque, tenetur consequuntur, corrupti voluptatibus eos eligendi odit possimus ratione maxime iure non excepturi fuga quam odio nisi, nam aut.
-                .about_r
-                    svg.trg.trg_fill_beige
-                    .about-data
-                        .about-data_desc.about-user-info
-                            .about-user-info__title.subtitle
-                                | Мои навыки
-                            .about-data__text
-                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, doloribus sit non officiis numquam expedita iure debitis? Quidem exercitationem, non sequi, aut, expedita qui quae reiciendis consectetur ullam ducimus excepturi?
-                        .about-data__content
-                            ul.skills
-                                each skill in skills
-                                    each skillIndex, skillName in skill
-                                        li.skills__item
-                                            .skill-section
-                                                .skill-section__title= skillName
-                                                ul.skill-section__list
-                                                    each skillTitle in skillIndex
-                                                        li.skills-section__item
-                                                            .skill
-                                                                svg.skill_progressbar
-                                                                .skill_name= skillTitle
-            section.section.map
+
+    section.section.header
+        ul.socials
+            each item in ["in","fb","gh"]
+                li.socials__item
+                    a(href="" class = `socials__link socials__link_${item}`)
+        a(href="").hamburger-menu
+        a(href="").arrow-down
+        .header__title
+            img(src="", alt="").section-title
+            .user.header__user-block
+                .user__img
+                .user__name
+                .user__site
+    section.section.about
+        .about_l
+            svg.trg.trg_fill_white
+            .title.about__section-title
+                | Персональная информация
+            .user-about
+                .user-about__picture
+                .user-about__title.subtitle
+                    | Кто я
+                .user-about__text
+                    P Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis eveniet atque, tenetur consequuntur, corrupti voluptatibus eos eligendi odit possimus ratione maxime iure non excepturi fuga quam odio nisi, nam aut.
+        .about_r
+            svg.trg.trg_fill_beige
+            .about-data
+                .about-data_desc.about-user-info
+                    .about-user-info__title.subtitle
+                        | Мои навыки
+                    .about-data__text
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, doloribus sit non officiis numquam expedita iure debitis? Quidem exercitationem, non sequi, aut, expedita qui quae reiciendis consectetur ullam ducimus excepturi?
+                .about-data__content
+                    ul.skills
+                        each skill in skills
+                            each skillIndex, skillName in skill
+                                li.skills__item
+                                    .skill-section
+                                        .skill-section__title= skillName
+                                        ul.skill-section__list
+                                            each skillTitle in skillIndex
+                                                li.skills-section__item
+                                                    .skill
+                                                        svg.skill_progressbar
+                                                        .skill_name= skillTitle
+    section.section.map
