@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const fs = require('fs');
 
 const src = { root: path.resolve(__dirname, 'src') };
 const dist = { root: path.resolve(__dirname, 'dist') };
@@ -19,20 +20,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test:/\.js$/,
+                test: /\.js$/,
                 loader: 'babel-loader'
             },
             {
                 test: /\.(gif|png|jpe?g|svg|woff)$/,
                 use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: '[path][name].[ext]'
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]'
+                        }
                     }
-                  }
                 ]
-              },
+            },
             {
                 test: /\.pug$/,
                 use: [
@@ -52,7 +53,12 @@ module.exports = {
                         loader: 'pug-html-loader',
                         options: {
                             pretty: true,
-                        },  
+                            data: {
+                                data() {
+                                    return JSON.parse(fs.readFileSync('./content.json', 'utf8'));
+                                }
+                            },
+                        },
                     },
                 ],
             },
