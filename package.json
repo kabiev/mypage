@@ -1,7 +1,6 @@
 {
   "name": "mywebpackconfig",
   "version": "1.0.0",
-  "description": "",
   "main": "src/js/app.js",
   "scripts": {
     "build": "webpack",
@@ -18,5 +17,14 @@
     "html-loader": "^0.5.5",
     "pug-html-loader": "^1.1.5",
     "webpack": "^3.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabiev/mypage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kabiev/mypage/issues"
+  },
+  "homepage": "https://github.com/kabiev/mypage#readme",
+  "description": ""
 }
