@@ -21,7 +21,7 @@ module.exports = {
         publicPath: '../'
     },
     devServer: {
-        contentBase: './dist/template/pages'
+        contentBase: './dist/'
     },
     module: {
         rules: [
